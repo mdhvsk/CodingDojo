@@ -1,0 +1,14 @@
+body{
+    background-color:brown
+}
+h1{
+    background-color: aquamarine;
+    color: blue;
+    text-decoration: underline;
+}
+
+.green{
+    background-color: bisque;
+    text-align:center;
+    font-style: italic;
+}
