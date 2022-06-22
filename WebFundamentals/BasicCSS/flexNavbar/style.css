@@ -1,0 +1,52 @@
+.nav {
+    background-color: gray;
+    height: 50px;
+    width: auto;
+    color: white;
+    overflow:hidden;
+    font-family: roboto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+}
+
+h1 { 
+    margin: 20px;
+    font-weight: 100;
+
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px;
+    list-style: none;
+
+}
+
+
+li {
+    margin: 20px;
+    text-decoration: none;
+
+}
+
+button {
+    color: white;
+    padding: 5px 10px;
+    background-color: lightskyblue;
+    box-shadow: 5px 3px 3px black;
+    border: 2px solid black;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color:blanchedalmond;
+}

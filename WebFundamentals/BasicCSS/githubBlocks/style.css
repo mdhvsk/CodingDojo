@@ -1,0 +1,45 @@
+body {
+    background-color: aliceblue;
+}
+
+div {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    width: 960px;
+
+}
+
+p  {
+    text-align: center;
+}
+
+
+h1 { 
+    text-align: center;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.pink{
+    background-color: pink;
+    justify-content: space-evenly;
+}
+
+.white {
+    background-color: white;
+}
+
+.blue, .white {
+    justify-content: space-between;
+}
+
+img {
+    
+    height: 200px;
+    width:auto;
+    margin: 20px;
+}
+
