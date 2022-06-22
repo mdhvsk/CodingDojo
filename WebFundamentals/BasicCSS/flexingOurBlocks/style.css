@@ -2,6 +2,7 @@
     width: 950px;
     background-color: silver;
     margin: 0px auto;
+    overflow: hidden;
     
     
 }
@@ -18,8 +19,10 @@
 }
 .main {
     height: 400px;
-    width: 700px;
+    width: 800px;
     background-color: red;
+    float: right;
+    margin: 15px;
 }
 .sub-content {
     height: 200px;
@@ -30,7 +33,7 @@
     height: 120px;
     width: 660px;
     background-color: purple;
-    margin:10px;
+    margin:15px;
 }
 .row {
     /* TODO - what should go here? */
@@ -38,5 +41,6 @@
 }
 
 .sub-content{
-    margin:10px;
-}
+    margin-left:15px;
+    margin-top:15px;
+    margin-bottom: 15px;}
