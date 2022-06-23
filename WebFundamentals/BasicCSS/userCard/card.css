@@ -1,0 +1,46 @@
+.container {
+    display: block;
+    height: auto;
+    height:400px;
+    width: 800px;
+    border: 1px gray solid;
+    margin-left: 200px;
+}
+
+.highlight {
+    background-color: teal;
+    height:120px;
+}
+
+.info{
+
+    margin-left: 50px;
+}
+
+
+img {
+    width: 15px;
+}
+
+.user {
+
+    margin-left: 50px;
+    width: 100px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    position: absolute;
+    top:70px;
+    left:210px;
+}
+
+a {
+    color: darkblue
+}
+
+p {
+    margin:2px;
+}
+
+h3 {
+    font-style: italic;
+}

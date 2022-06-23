@@ -1,12 +1,12 @@
 body {
     background-color: aliceblue;
+   
+
 }
 
 div {
     margin: 20px;
     display: flex;
-    align-items: center;
-    width: 960px;
 
 }
 

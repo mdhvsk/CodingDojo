@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
+.nav {
+    height: 100px;
+    width: auto;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;  
+}
+
+.leftNav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 50px;
+    /* What should I do if the browser shrinks horizontally too much, should i make a 
+    margin-right?*/
+}
+
+h1 {
+    color: white;
+    display: inline-block;
+}
+
+#navBut {
+    margin-right: 150px;
+    background-color: teal;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid black;
+
+}
+
+.navLink{
+    text-decoration: none;
+    color: white;
+}
+
+.navLink:hover{
+    color:teal;
+}
+
+
+
+
+/* Profile CSS*/
+
+.profile {
+    margin-left:150px;
+    margin-right:20px;
+    margin-bottom: 20px;
+    width:450px;
+    height: 350px;
+    border: 5px lightgray solid;
+}
+
+.highlight{
+    height:100px;
+    background-color: teal;
+}
+
+#jane{
+    position: absolute;
+    width:100px;
+    border-radius: 50%;
+    
+
+}
+
+.info {
+    margin:50px;
+}
+
+.map, .gear {
+    width: 15px;
+}
+
+/* Education */
+
+.education {
+    margin-left:150px;
+    width:450px;
+    height: 200px;
+    border: 5px lightgray solid;
+}
+
+.sectionHeader {
+    height:50px;
+    color: white;
+    background-color: rgb(100, 100, 90);
+    display:flex;
+    align-items: center;
+}
+
+.edu {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+
+
+
+/* Connection requests     */
+
+.requests {
+    width:300px;
+    height:250px;
+    border: 5px lightgray solid;
+    background-color: white;
+    margin-right:150px;
+
+}
+
+.rightHeader {
+    height:75px;
+    color:white;
+    background-color: rgb(100, 100, 90);
+    display:flex;
+    align-items: center;
+    margin-bottom:10px;
+}
+
+#num {
+    background-color: gray;
+    color:black;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin:10px;
+    
+}
+
+
+.pp {
+    width: 40px;
+    border-radius:50%
+}
+
+.icon {
+    width: 40px;
+    float: right;
+    margin: 10px;
+}
+
+.requester1 {
+    display:flex;
+    align-items: center;
+}
+
+.requester {
+    flex:1;
+    margin:10px;
+}
+
+.requester2 {
+    flex:1;
+}
+
+
+
+
+/* your connections */
+
+.connections {
+    width:300px;
+    height:400px;
+    border: 5px lightgray solid;
+    background-color: white;
+    margin-right:150px;
+}
+
+.notif {
+    border-bottom: 5px lightgray solid;
+}
+
+#view {
+    margin:10px;
+    font-size: medium;
+}

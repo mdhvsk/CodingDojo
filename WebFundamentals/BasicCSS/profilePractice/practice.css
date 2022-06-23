@@ -1,0 +1,215 @@
+/*
+Questions::afterhow to align profile pic with names
+is the flexing of regions ok
+
+what is the img
+
+
+*/
+
+* {
+    margin: 0;
+    padding:0;
+}
+
+/* Nav BAR */
+.nav {
+    height: 100px;
+    width: auto;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;  
+}
+
+.leftNav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 50px;
+    /* What should I do if the browser shrinks horizontally too much, should i make a 
+    margin-right?*/
+}
+
+h1 {
+    color: white;
+    display: inline-block;
+}
+
+#navBut {
+    margin-right: 150px;
+    background-color: teal;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid black;
+
+}
+
+.navLink{
+    text-decoration: none;
+    color: white;
+}
+
+.navLink:hover{
+    color:teal;
+}
+
+
+/*    LAYOUT */ 
+.layout{
+    display:flex;
+}
+
+
+.largeC{
+    flex:2;
+    margin-left:150px;
+}
+
+.smallC{
+    flex:1;
+    margin-right:150px;
+}
+.profile, .education {
+    margin-bottom:30px;
+    margin-right:15px;
+}
+
+.requests, .connections {
+    margin-bottom: 30px;
+    margin-left:15px;
+}
+
+
+/* Profile */
+
+.profile {
+    
+    height: 350px;
+    border: 5px lightgray solid;
+}
+
+
+.highlight{
+    height:100px;
+    background-color: teal;
+}
+
+#jane{
+    position: absolute;
+    width:100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    top: 175px;
+    left: 200px;
+
+}
+
+.info {
+    margin:50px;
+}
+
+.map, .gear {
+    width: 15px;
+}
+
+
+
+/* Education */
+.education {
+    height: 200px;
+    border: 5px lightgray solid;
+}
+
+.sectionHeader {
+    height:50px;
+    color: white;
+    background-color: rgb(100, 100, 90);
+    display:flex;
+    align-items: center;
+}
+
+.edu {
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+
+/* requests */
+
+.requests {
+    height:250px;
+    border: 5px lightgray solid;
+    background-color: white;
+
+}
+
+.rightHeader {
+    height:75px;
+    color:white;
+    background-color: rgb(100, 100, 90);
+    display:flex;
+    align-items: center;
+    margin-bottom:10px;
+}
+
+.num {
+    background-color: gray;
+    color:black;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin:10px;
+    
+}
+
+
+.pp {
+    width: 40px;
+    border-radius:50%;
+    border: 2px solid black;
+}
+
+.icon {
+    width: 40px;
+    float: right;
+    margin: 10px;
+}
+
+.requester1 {
+    display:flex;
+    align-items: center;
+}
+
+.requester {
+    flex:1;
+    margin:10px;
+}
+
+.requester2 {
+    flex:1;
+}
+
+
+/* Connections */
+
+
+.connections {
+    height:425px;
+    border: 5px lightgray solid;
+    background-color: white;
+}
+
+.notif {
+    border-bottom: 5px lightgray solid;
+}
+
+#view {
+    margin:10px;
+    font-size: medium;
+}
+
+
+
