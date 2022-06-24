@@ -73,29 +73,30 @@ h1 {
 /*    LAYOUT 
 be specific for class and id 
 */ 
+
+
 .layout{
     display:flex;
+    
 }
 
 
 .largeColumn{
     flex:2;
     margin-left:150px;
-}
-
-.smallC{
-    flex:1;
-    margin-right:150px;
-}
-.profile, .education {
-    margin-bottom:30px;
     margin-right:15px;
 }
 
-.requests, .connections {
-    margin-bottom: 30px;
+.smallColumn{
+    flex:1;
+    margin-right:150px;
     margin-left:15px;
 }
+
+.largeColumn>div, .smallColumn>div {
+    margin-bottom:30px;
+}
+
 
 
 /* Profile 
@@ -109,7 +110,6 @@ NO IMG AND <a> needs span since they are inline elements
 
 .profile {
     
-    height: 350px;
     border: 5px lightgray solid;
 }
 
@@ -131,6 +131,11 @@ NO IMG AND <a> needs span since they are inline elements
 
 }
 
+.profileIcon{
+    display: flex;
+    align-items: center;
+}
+
 .info {
     padding-left:50px;
     padding-top: 50px;
@@ -142,14 +147,13 @@ NO IMG AND <a> needs span since they are inline elements
     padding-bottom: 10px;
 }
 
-.info h3 {
-    background-color: blue;
-    display: flex;
-    align-items: center;
+.info img{
+    padding-right:10px;
 }
 
+
 .map, .gear {
-    height: 15px;
+    height: 20px;
 }
 
 
@@ -176,6 +180,19 @@ apply sectionHeader elements to info
 
 .resume {
     padding: 10px 40px;
+}
+
+.resume *{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.resume h3 {
+    font-size: 1.25em;
+}
+
+.resume h4 {
+    color: gray
 }
 
 
@@ -226,7 +243,7 @@ apply sectionHeader elements to info
 
 .requester {
     display:flex;
-    align-items: center;
+    align-items: center; 
     flex:1;
     margin:10px;
 }
@@ -244,14 +261,20 @@ apply sectionHeader elements to info
     background-color: white;
 }
 
-.notif {
+.content {
     border-bottom: 5px lightgray solid;
 }
 
 #view {
-    padding: 10px;
+    padding: 15px;
     font-size: medium;
     align-items: center;
+}
+
+
+
+.footer  {
+    padding: 10px;
 }
 
 
