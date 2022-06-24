@@ -1,35 +1,46 @@
 /*
-Questions::afterhow to align profile pic with names
-is the flexing of regions ok
 
-what is the img
+To fix:
+decrease space betweem nav bar links
 
+Focus on space betwwen sign out and find connections 
+Extra border work on Jane profile pic
+
+
+make container for seattle and map a flex container and align items center
+or use line height 
+
+change font for google font: balsamic sands
 
 */
 
 * {
     margin: 0;
     padding:0;
+    font-family: Balsamiq Sans;
 }
 
-/* Nav BAR */
-.nav {
-    height: 100px;
-    width: auto;
+/* Nav BAR 
+change class to id, a, and leftNav can be given as child 
+*/
+#nav {
+    /* height: 100px; */
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px;  
+    padding: 10px 0px;
 }
 
-.leftNav {
-    width: 50%;
+#nav div {
+    /* width:450px; */
+    margin-right:auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 150px;
-    margin-right: 50px;
+    gap: 20px;
+    padding-left: 150px;
     /* What should I do if the browser shrinks horizontally too much, should i make a 
     margin-right?*/
 }
@@ -39,7 +50,8 @@ h1 {
     display: inline-block;
 }
 
-#navBut {
+#nav button{
+    /* flex:1; */
     margin-right: 150px;
     background-color: teal;
     color: white;
@@ -48,23 +60,25 @@ h1 {
 
 }
 
-.navLink{
+#nav a{
     text-decoration: none;
     color: white;
 }
 
-.navLink:hover{
+#nav a:hover{
     color:teal;
 }
 
 
-/*    LAYOUT */ 
+/*    LAYOUT 
+be specific for class and id 
+*/ 
 .layout{
     display:flex;
 }
 
 
-.largeC{
+.largeColumn{
     flex:2;
     margin-left:150px;
 }
@@ -84,7 +98,14 @@ h1 {
 }
 
 
-/* Profile */
+/* Profile 
+add image to highlight div and use relative position
+
+don't use br for spacing use margin, flex prop, etc
+use img and span for <p> no h3 for text decoration
+NO IMG AND <a> needs span since they are inline elements 
+
+*/
 
 .profile {
     
@@ -94,61 +115,79 @@ h1 {
 
 
 .highlight{
-    height:100px;
+    /* height:100px; */
     background-color: teal;
 }
 
 #jane{
-    position: absolute;
+    position: relative;
     width:100px;
     border-radius: 50%;
-    border: 2px solid black;
-    top: 175px;
-    left: 200px;
+    border: 2px solid gray;
+    top: 50px;
+    left: 50px;
+    padding: 2px;
+    background-color: white;
 
 }
 
 .info {
-    margin:50px;
+    padding-left:50px;
+    padding-top: 50px;
+    
+    
+}
+
+.info *{
+    padding-bottom: 10px;
+}
+
+.info h3 {
+    background-color: blue;
+    display: flex;
+    align-items: center;
 }
 
 .map, .gear {
-    width: 15px;
+    height: 15px;
 }
 
 
 
-/* Education */
+/* Education
+
+apply sectionHeader elements to info
+*/
 .education {
-    height: 200px;
+    /* height: 200px; */
     border: 5px lightgray solid;
 }
 
-.sectionHeader {
-    height:50px;
+.sectionHeader{
+    /* height:50px; */
     color: white;
     background-color: rgb(100, 100, 90);
     display:flex;
     align-items: center;
+    padding: 10px 40px;
+
 }
 
-.edu {
-    margin-left: 50px;
-    margin-top: 10px;
+
+.resume {
+    padding: 10px 40px;
 }
 
 
 /* requests */
 
 .requests {
-    height:250px;
     border: 5px lightgray solid;
     background-color: white;
 
 }
 
 .rightHeader {
-    height:75px;
     color:white;
     background-color: rgb(100, 100, 90);
     display:flex;
@@ -170,12 +209,14 @@ h1 {
     width: 40px;
     border-radius:50%;
     border: 2px solid black;
+    padding: 2px;
+    margin-right: 3px;
 }
 
 .icon {
-    width: 40px;
+    width: 30px;
     float: right;
-    margin: 10px;
+    margin: 5px;
 }
 
 .requester1 {
@@ -184,6 +225,8 @@ h1 {
 }
 
 .requester {
+    display:flex;
+    align-items: center;
     flex:1;
     margin:10px;
 }
@@ -197,7 +240,6 @@ h1 {
 
 
 .connections {
-    height:425px;
     border: 5px lightgray solid;
     background-color: white;
 }
@@ -207,8 +249,9 @@ h1 {
 }
 
 #view {
-    margin:10px;
+    padding: 10px;
     font-size: medium;
+    align-items: center;
 }
 
 
