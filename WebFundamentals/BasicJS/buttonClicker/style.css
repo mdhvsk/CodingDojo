@@ -1,0 +1,144 @@
+/* questions:
+how to center add definition without making its own div */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*navigation bar */
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    margin-left: 150px;
+    margin-right:150px;
+    margin-bottom: 25px;
+    background-color: rgb(204,204,204);
+
+}
+
+#nav button {
+    color: white;
+    background-color: rgb(43,119,228);
+    border: 2px solid black;
+    padding: 2px 8px;
+    box-shadow: 2px 2px 2px  black;
+}
+
+#search{
+    width: 300px;
+    border: 2px solid black;
+    padding: 5px;
+}
+
+/*content layour */
+#content{
+    margin-left: 150px;
+    margin-right:150px;
+    display: flex;
+}
+
+#leftColumn {
+    flex:2;
+    margin-right:25px;
+}
+
+#rightColumn {
+    flex:1;
+
+}
+
+/* Left column styling */
+.entry {
+    border:2px solid black;
+    display: flex;
+    align-items: center;
+    margin-bottom:25px;
+}
+
+.wordDescr {
+    flex:1;
+    text-align: center;
+    margin: 10px;
+}
+
+.word {
+    font-size: 2em;
+}
+
+.grammar {
+    font-style: italic;
+    padding-bottom: 5px;
+}
+
+.plural {
+    padding-bottom: 10px;
+}
+
+.definition {
+    flex:2;
+    margin: 25px;
+}
+
+.likes {
+    background-color: rgb(255,216,102);
+    border: 2px solid black;
+    padding: 7.5px 15px;
+    box-shadow: 2px 2px 2px  black;
+    margin-bottom: 10px;
+}
+
+
+
+/* Add definition */
+.addDefinition {
+    border: 2px solid black;
+    height: 150px;
+}
+
+
+
+.addDefinition p {
+    font-size: 1.5em;
+    margin: 10px;
+    
+}
+
+#you {
+    font-weight: bold ;
+
+}
+
+.addButton {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+} 
+.addDefinition button {
+    text-align: center;
+    background-color: rgb(146,196,124);
+    border: 2px solid black;
+    padding: 7.5px 15px;
+    box-shadow: 2px 2px 2px  black;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
