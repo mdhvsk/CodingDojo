@@ -1,0 +1,56 @@
+#nav {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 150px;
+    color:white;
+    background-color: rgb(159,197,248);
+}
+
+#cities {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cities h3 {
+    padding: 0px 20px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 150px;
+    border-bottom: 2px solid black;
+}
+
+/* content  */
+
+#content {
+    margin-left: 150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.weather {
+    background-color:rgb(238,238,238);
+    text-align: center;
+    justify-content: center;
+}
+
+.date{
+    font-size: 2em;
+}
+
+.weather img {
+    border-radius: 50%;
+}
+.weather div {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+} 

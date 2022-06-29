@@ -1,0 +1,138 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    margin: 0px 150px
+}
+
+#header {
+    border: 2px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#logo {
+    height:100px;
+}
+
+#user {
+    height: 60px;
+}
+
+#headerLeft, #headerRight{
+    border: 1px solid red;
+    display:flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3.4rem;
+    font-family: cursive;
+}
+
+#headerRight > span {
+    font-size: 1.8rem
+}
+
+#nav-bar {
+    border: 2px dotted red;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    font-size: 1.2rem;
+    padding: 10px 0px;
+    text-decoration: underline;
+    border-bottom: 3px solid black;
+}
+
+#nav-bar input {
+    height:36px;
+    width:210px;
+    border-radius: 10px;
+}
+
+#searchLogo{
+    height: 20px;
+    position:relative;
+    right: 50px;
+    top: 5px;
+}
+
+
+/* ------------------------DONE WITH NAVBAR ---------------------------*/
+
+#slogan{
+    text-align:center;
+    font-style:italic;
+    font-size: 2.4rem;
+    padding: 15px 0px;
+    border: 1px dotted red;
+}
+
+/* ------------------------PLAYERS DIV ------------------------*/
+
+#players {
+    height: 200px;
+    border: 1px dotted red;
+    background-color: coral;
+    border-radius: 20px;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.player {
+    text-align: center;
+}
+.player>img {
+    height: 100px;
+}
+
+
+/* main div with two columns  */
+
+#main {
+    border: 2px solid red;
+    height: 700px;
+    display:flex;
+}
+
+#columnLeft{
+    flex:1;
+    border:1px dotted blue
+}
+
+#columnRight {
+    flex:2; 
+    border: 1px dotted green;
+}
+
+#try {
+    background-color: coral;
+    padding:10px;
+    font-size: 1.4rem;
+    border-radius:8px;
+    display:flex;
+    align-items: center;
+}
+
+#try img{
+    height: 40px;
+    width:70px;
+}
+#columnLeft>img {
+    height: 200px;
+    margin-top: 20px;
+}
+
+#learn {
+    border: 2px solid red;
+}
+
