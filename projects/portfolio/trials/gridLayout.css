@@ -1,0 +1,15 @@
+.wrapper {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:10px;
+    grid-auto-rows: minmax(100px, auto); 
+
+}
+
+.wrapper div {
+    border: 2px solid black;
+    background-color: bisque;
+    height: 200px;
+}
+

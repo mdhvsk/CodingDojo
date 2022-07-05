@@ -1,0 +1,237 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    transition: background-color 0.5s ease-out 100ms;
+
+    
+}
+
+#nav {
+    background-color: black; 
+    color: white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    width:100%;
+    top:0;
+    font-weight: 100;
+    opacity:0.9;
+
+    padding: 25px 75px;
+    margin-bottom: 50px;
+    transition: background-color 1.5s ease-out 100ms;
+    transition: color 1.5s ease-out 100ms;
+
+
+}
+
+#nav h1 {
+    font-weight: 500;
+}
+#nav ul {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+#nav li, #nav a {
+    padding: 0px 20px;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    transition: color 1s ease-out 100ms;
+
+
+    font-weight:300;
+
+}
+
+#nav a:hover {
+    color: white;
+    font-weight:600
+
+}
+
+/* ------------------------END OF NAVIGATION ------------------------ */
+
+#intro {
+    width: 100%;
+    margin-top:90px;
+    height: 700px;
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+}
+#intro h2 {
+    padding: 150px 0px 100px 0px;
+    text-align: center;
+    color:black;
+    font-weight: 200;
+    font-size: 2.5em;
+    
+}
+
+#myName{
+    color:#39603D;
+    text-decoration: solid;
+    font-weight: 400;
+    
+}
+
+#jobTitle {
+    color:#39603D;
+    font-weight:400
+}
+
+#intro p {
+    font-size: 3em;
+    font-weight: 400;
+    color:#39603D;
+    /* margin-bottom: 1000px; */
+}
+
+/* ------------------------END OF INTRO ------------------------ */
+
+.header {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 2em;
+    font-weight: 200;
+    padding-bottom: 50px;
+}
+
+#aboutMe {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 150px;
+}
+
+#aboutMe p {
+    flex:1;
+
+}
+
+
+/* ------------------------END OF ABout ME ------------------------ */
+
+
+#projectHeader {
+    text-align: center;
+    padding-top: 100px;
+    font-size: 2em;
+    font-weight: 200;
+    color:#39603D;
+
+}
+
+#gridContainer {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap:10px;
+    grid-auto-rows: minmax(100px, auto); 
+    margin: 50px 250px;
+    height: 600px;
+    
+}
+#gridContainer>div{
+    border: 2px solid black;
+    border-radius:2%;
+}
+
+.gridItem1 {
+    background-image: url("../img/health-tech.png");
+    background-size: cover;
+    transition: background-image 1s ease-out 100ms;
+    text-align: center;
+}
+
+.hide1 {
+    opacity:0;
+    transition: opacity 1s ease-out 100ms;
+    height: 100%;
+    background-color: #A3BCB6;
+
+} 
+
+.gridItem1:hover {
+    background-image: none;
+}
+
+.hide1:hover {
+    opacity:1;
+    size: cover;
+}
+
+.techElements {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.python, .flask {
+    padding: 5px 10px;
+    color:white;
+    background-color: #39603D;
+    border-radius: 10%;
+
+}
+
+.MySQL {
+    padding: 5px 10px;
+    color:white;
+    background-color:#3C403D;
+    border-radius: 10%;
+}
+
+.hide1 h3, .hide1>p {
+    padding: 20px 0px;
+}
+
+.techElements p{
+    margin: 20px 10px;
+}
+
+.hide1 button {
+    color: white;
+    background-color: black;
+    border-radius:10%;
+    padding: 10px 20px;
+    margin: 20px 0px;
+}
+
+/* ------------------------END OF Grid ------------------------ */
+
+#sidebar {
+    height:125;
+    width:3%;
+    /* border: 2px solid black; */
+    position:fixed;
+    top:50%;
+    text-align: center;
+    
+}
+
+#linkedIn, #github {
+    width:50px;
+    display: block;
+    justify-content: center;
+    padding-top:15px;
+    padding-bottom: 15px;
+    padding-left:15px;
+    color:blue;
+}
+
