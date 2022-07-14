@@ -1,4 +1,3 @@
-This is my first Readme file for the bootcamp
-
+This repository is all the cumulative work I have completed throughout the Coding Dojo Bootcamps, this inclueds assignments, algorithm practice and personal projects
 
 
