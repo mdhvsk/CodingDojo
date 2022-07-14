@@ -1,0 +1,23 @@
+/* .parent {
+    display: grid;
+    /* flex-wrap: wrap; */
+/* }
+
+.child {
+    flex: 2 0 21%; explanation below
+    column-gap: 5px;
+    height: 100px;
+    background-color: blue;
+}  */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+}
+  
+  .child {
+    margin: 5px;
+    height: 300px;
+    background-color: blue;
+  }

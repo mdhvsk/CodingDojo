@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action = "/back" method = "post">
+        <h2>Submitted Info</h2>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>Location: </td>
+                <td>{{location}}</td>
+            </tr>
+            <tr>
+                <td>Language: </td>
+                <td>{{language}}</td>
+            </tr>
+            <tr>
+                <td>Comment: </td>
+                <td>{{comment}}</td>
+            </tr>
+        </table>
+        <button type="submit" class="btn btn-primary">Back</button>
+    </form>
+</body>
+<style>
+    body>form {
+        margin: 0px 150px;
+        background-color: rgb(51,57,61);
+        color: white;
+        padding: 150px;
+    }
+
+    h2 {
+        color: rgb(255,191,10)
+    }
+
+
+</style>
+</body>
+</html>

@@ -1,0 +1,76 @@
+INSERT into users (first_name, last_name)
+VALUES 
+('Jane', "Amsden"),
+('Emily', 'Dixon'),
+('Theodore', 'Dostoevsky'),
+('William', 'Shapiro'),
+('Lao', 'Xiu');
+
+INSERT into books(title)
+VALUES
+('C Sharp'),
+('Java'),
+('Python'),
+('PHP'),
+('Ruby');
+
+
+UPDATE books
+SET title = "C#"
+WHERE id = 1;
+
+
+UPDATE users
+SET first_name = 'Bill'
+WHERE id = 4; 
+
+SET FOREIGN_KEY_CHECKS=0;
+
+INSERT into favorites (book_id, user_id)
+VALUES 
+(1, 1),
+(2,1);
+
+
+INSERT into favorites (book_id, user_id)
+VALUES 
+(1, 2),
+(2,2),
+(3,2);
+
+
+INSERT into favorites (book_id, user_id)
+VALUES 
+(1,3),
+(2,3),
+(3,3),
+(4,3);
+
+SELECT * from users 
+JOIN favorites ON users.id = favorites.user_id
+LEFT JOIN books
+ON favorites.book_id = books.id
+WHERE books.id = 3;
+
+DELETE from favorites 
+WHERE book_id = 3 LIMIT 1;
+
+INSERT into favorites(book_id,user_id)
+VALUE
+(2,5);
+
+SELECT title from books 
+LEFT JOIN favorites ON books.id = favorites.book_id
+LEFT JOIN users on favorites.user_id = users.id 
+WHERE users.id = 3;
+
+SELECT first_name, last_name from users 
+LEFT JOIN favorites ON users.id = favorites.user_id
+LEFT JOIN books on favorites.book_id = books.id
+WHERE books.id = 5
+
+
+
+
+
+

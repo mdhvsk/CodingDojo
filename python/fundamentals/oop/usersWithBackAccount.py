@@ -76,7 +76,6 @@ class User:
 
     def makeDeposit(self, amount,accountType):
         self.account[accountType].deposit(amount)
-        # print(self.account[accountType].balance)
         return self
 
     def makeWithdrawal(self, amount, accoutType):
@@ -103,6 +102,7 @@ class User:
 
 checking = "checking"
 savings = "savings"
+
 a1 = User("madhav", "asok", "madhavasok@gmail.com", 25, checking)
 a1.verifyAccount(checking).makeDeposit(200,checking).addAccount(savings).makeDeposit(300, savings)
 

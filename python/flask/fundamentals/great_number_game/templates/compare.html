@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Welcome to the Great Number Game!</h1>
+        <h2>i am thinking of a number between 1 and 100! <br>Take a guess!</h2>
+        <h2 id = "response">{{response}}</h2>
+        
+        <form action = "/compare", method ='post'>
+            <textarea name = "attempt"></textarea>
+            <br>
+            <input type = 'submit' value = 'Submit'>
+        </form>
+    
+</body>
+<style>
+    * {
+        text-align: center;
+    }
+
+    #response {
+        padding: 150px;
+        margin: 10px 150px;
+        background-color: red;
+        color: white;
+        align-items: center;
+    }
+
+    body>div{
+        display: block;
+        align-items: center;
+    }
+
+    form {
+        display: block;
+    }
+</style>
+</html>

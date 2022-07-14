@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="tally">
+        <p>Your gold: <span>{{count}}</span></p>
+    </div>
+
+    <div id = 'locationList'>
+        <form class = 'location' action = "/process_money" method = "post">
+            <p>Farm</p>
+            <p>(earns 10-20 golds)</p>
+            <input type="hidden" name="farm" value="">
+            <input type = "submit" value = "Find Gold!">
+        </form>
+        <form class = 'location' action = "/process_money" method = "post">
+            <p>Cave</p>
+            <p>(earns 5-10 golds)</p>
+            <input type="hidden" name="cave" value="">
+            <input type = "submit" value = "Find Gold!">
+            </form>
+        <form class = 'location' action = "/process_money" method = "post">
+            <p>House</p>
+            <p>(earns 2-5 golds)</p>
+            <input type="hidden" name="house" value="">
+            <input type = "submit" value = "Find Gold!">        
+        </form>
+        <form class = 'location' action = "/process_money" method = "post">
+            <p>Casino</p>
+            <p>(earns/takes 0-50 golds)</p>
+            <input type="hidden" name="casino" value="">
+            <input type = "submit" value = "Find Gold!">
+        </form>
+    </div>
+
+    <p>Activities</p>
+
+    <div id = 'activities'>
+        <ul>
+            {% for activity in activities%}
+            <li class = 'red'> {{activity.message}} </li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+    <style>
+
+        #tally {
+            margin: 50px 150px;
+        }
+        
+        span {
+            padding: 10px 500px 10px 20px;
+            border: solid black 2px;
+            margin: 10px 150px;
+        }
+
+        #locationList {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 150px;
+        }
+
+        #locationList form {
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid black
+        }
+
+        #activities {
+            height: 150px;
+            overflow: scroll;
+            border: 2px solid black
+        }
+
+        body p #activities {
+            margin-left: 150px;
+        }
+
+        .green {
+            color:green
+        }
+
+        .red {
+            color:red
+        }
+    </style>
+</body>
+</html>
