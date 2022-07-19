@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <form action="/info" method="post">
+        <h2>Dojo Survey</h2>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name: </label>
+            <input type="text" class="form-control" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Dojo Location: </label>
+            <select class="form-select" name="location" aria-label="Default select example">
+                <option selected>--Select a Location--</option>
+                <option value="chicago">Chicago</option>
+                <option value="seattle">Seattle</option>
+                <option value="san_jose">San Jose</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="language" class="form-label">Favorite Language: </label>
+            <select class="form-select" name="language" aria-label="Default select example">
+                <option selected>--Select a Language--</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c#">C#</option>
+                <option value="javascript">Javascript</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment:</label>
+            <textarea class="form-control" aria-label="With textarea" name="comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <p>{{message}}</p> 
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    </form>
+
+    
+</body>
+<style>
+    body>form {
+        margin: 0px 150px;
+        background-color: rgb(51, 57, 61);
+        color: white;
+        padding: 150px;
+    }
+
+    h2 {
+        color: rgb(255, 191, 10)
+    }
+
+    p {
+        color:red;
+        text-decoration: solid 2px;
+    }
+</style>
+
+</html>

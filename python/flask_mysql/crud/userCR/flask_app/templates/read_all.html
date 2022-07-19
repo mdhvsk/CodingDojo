@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (All)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Users</h1>
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for one_user in all_users %}
+                
+                <tr>
+
+                    <td>{{one_user.id}}</td>
+                    <td>{{one_user.full_name}}</td>
+                    <td>{{one_user.email}}</td>
+                    <td>{{one_user.created_at}}</td>
+                    
+                    <td>  
+                        <form action = "/showReadInfo" method = 'post'>
+                            <input type = "hidden" name = "id" value = {{one_user.id}}>
+                            <input type = "submit" name = "releaseinfo" value = "Show" class = 'link' >
+                        </form>
+                        <span>|</span>
+                        <form action ='/editInfo' method = 'post'>
+                            <input type = "hidden" name = "id" value = {{one_user.id}}>
+                            <input type = "submit" name = "releaseID" value = "Edit" class = 'link'>
+                        </form>
+                        <span>|</span>
+
+                        <form action ='/delete' method = 'post'>
+                            <input type = "hidden" name = "id" value = {{one_user.id}}>
+                            <input type = "submit" name = "releaseID" value = "Delete" class = 'link'>
+                        </form>
+                        <span>|</span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href = "{{ url_for('showCreate') }}">Add a New User</a>
+</body>
+
+<style>
+    .link {
+        background: none;
+        color: blue;
+        border:none;
+        text-decoration: underline;
+        cursor:pointer;
+        font-size: 1em;
+ 
+
+    }
+</style>
+</html>
