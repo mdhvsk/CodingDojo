@@ -1,0 +1,58 @@
+.twoForms {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+    margin: 50px 150px;
+
+}
+.register, .login, .viewCommentSection, .makeCommentSection {
+    background-color: #34393E;
+    color: white;
+    width: 400px;
+}
+
+.register form, .login form, .myForm, div>h2{
+    padding: 25px;
+}
+
+.registerForm h1 {
+    color: #047AFD
+}
+
+.registerForm button {
+    color: white;
+    background-color: #047AFD;
+    padding: 5px 20px; 
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.login h1 {
+    color:green
+}
+
+
+.loginForm button {
+    color: white;
+    background-color: green;
+    padding: 5px 20px; 
+    border: none;
+    border-radius: 5px;
+}
+
+.alert {
+    background-color: pink;
+    color:red;
+    margin: 10px;
+}
+
+
+.commentForm {
+    display: inline-block;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
