@@ -105,7 +105,7 @@
                       </div>
                 <div class = "box4"> <h4>Estimated Refills Needed</h4>
                     {% for medicine in meds%}
-                        <p>{{medicine.name}} {{medicine.days_of_week_list|length * medicine.times_of_day_list|length }}</p>
+                        <p>{{medicine.name}} {{medicine.days_till_refill}}</p>
                     {% endfor %}
             </div>
 

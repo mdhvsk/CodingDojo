@@ -3,6 +3,8 @@ from flask import Flask, session, render_template, redirect, request, flash
 from flask_app import app
 from flask_app.model.model_patient import Patient
 from flask_app.model.model_medication import Medication
+from flask_app.model.model_appointment import Appointment
+from flask_app.model.model_vitals import BloodPressure, BloodSugar, HeartRate
 
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
@@ -65,8 +67,32 @@ def logoutForm():
 
 @app.route('/addAppointment', methods = ['POST'])
 def addAppointment():
+    isValid = Appointment.validateAddAppointment(request.form)
+    if isValid == False:
+        return redirect('/appointmentsPage/add')
+    originalStart = request.form['start_time']
+    originalEnd = request.form['end_time']
+    startTime = f"{originalStart[0:4]}-{originalStart[5:7]}-{originalStart[8:10]} {originalStart[11:13]}:{originalStart[14:16]}:00"
+    endTime = f"{originalEnd[0:4]}-{originalEnd[5:7]}-{originalEnd[8:10]} {originalEnd[11:13]}:{originalEnd[14:16]}:00"
+
+    data = {
+        'title': request.form['title'],
+        'start_time': startTime,
+        'end_time': endTime,
+        'description': request.form['description'],
+        'frequency': request.form['frequency'],
+        'users_id': session['id']
+    }
+
+    print(data)
+    newID = Appointment.insertAppointments(data)
+
     return redirect('/appointmentsPage')
 
+@app.route('/deleteAppointment', methods = ['POST'])
+def deleteAppointment():
+    print(request.form)
+    return redirect('/appointmentsPage')
 
 # ******************* APPOINTMENT END *******************
 
@@ -97,3 +123,54 @@ def addMedication():
 def takeMedication():
     Medication.takeMedication(request.form)
     return redirect('medicationsPage')
+
+
+
+# ******************* MEASUREMENTS END *******************
+
+@app.route('/addHeartRate', methods = ['POST'])
+def addHeartRate():
+    data = {
+        'heart_rate': request.form['heart_rate'],
+        'patient_id': session['id']
+    }
+    newID = HeartRate.insertHeartRate(data)
+
+    x = HeartRate.plotHeartRate(data)
+
+    return redirect('/vitalsPage')
+
+
+
+@app.route('/addBloodPressure', methods = ['POST'])
+def addBloodPressure():
+    data = {
+        'systolic_data': request.form['systolic_data'],
+        'diastolic_data': request.form['diastolic_data'],
+        'patient_id': session['id']
+    }
+
+    newID = BloodPressure.insertBloodPressure(data)
+    x = BloodPressure.plotbloodPressure(data)
+    return redirect('/vitalsPage')
+
+
+@app.route('/addBloodSugar', methods = ["POST"])
+def addBloodSugar():
+    print(request.form)
+    if request.form['measurementUnits'] == "mM":
+        blood_sugar_mmol_l = float(request.form['blood_sugar'])
+        blood_sugar_mg_dl =  (blood_sugar_mmol_l*18)
+    if request.form['measurementUnits'] == "mg_dl":
+        blood_sugar_mg_dl = float(request.form['blood_sugar'])
+        blood_sugar_mmol_l = format(blood_sugar_mg_dl/18, ".2f")
+
+    data = {
+        'blood_sugar_mg_dl': blood_sugar_mg_dl,
+        'blood_sugar_mmol_l': blood_sugar_mmol_l,
+        'patient_id': session['id']
+    }
+
+    newID = BloodSugar.insertBloodSugar(data)
+    x = BloodSugar.plotbloodSugar(data)
+    return redirect('/vitalsPage')

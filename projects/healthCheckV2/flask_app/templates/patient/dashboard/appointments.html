@@ -57,7 +57,33 @@
         <div id="dashboard">
             <h3>Appointments</h3>
             <div id="content">
-                <div class = "box1">Upcoming Appointments: calendar</div>
+                <div class = "box1">
+                    <h4>Upcoming Appointments</h4>
+                    <table>
+            
+                        <thead>
+                            <th>Title</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                        </thead>
+                        {% for appointment in appts %}
+                        <tr>
+                            <td>{{appointment.title}}</td>
+                            <td>{{appointment.start_time}}</td>
+                            <td>{{appointment.end_time}}</td>
+                            <td>{{appointment.description}}</td>
+                            <form action="deleteAppointment" method = 'post'>
+                                <input type="hidden" value = "{{appointment.id}}">
+                                <td><button>Done</button></td>
+                            </form>
+                        
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
         <div class = "box2"><a href = "{{url_for('appointmentsAdd')}}">Add Appointment</a></div>
         <div class = "box3">Sign in to google calendar</div>
             </div>

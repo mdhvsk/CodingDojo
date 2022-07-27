@@ -98,23 +98,28 @@ h3 {
 
 
 }
-#content {
+.content {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 15px;
     margin: 10px 50px;
-    height: 80vh;
+    /* height: 80vh; */
     background-color: #F2F6FE;
 
 }
 
-#content>div {
+.content>div {
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
+}
+
+#charts img {
+    width: 350px;
+    padding:10px;
 }
 
 .box1 {

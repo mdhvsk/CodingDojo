@@ -56,11 +56,12 @@
         </nav>
         <div id="dashboard">
             <h3>Vitals</h3>
-            <div id="content">
+            <div class="content" id = "charts">
                 <div class = "box1"><a href="{{url_for('vitalsAdd')}}">Take Measurements</a></div>
-                <div class = "box2">Heart Rate Data </div>
-                <div class = "box3">Blood Pressure Data</div>
-                <div class = "box4">Glucose Level Data</div>
+                <div class = "box2"><img src="{{ url_for('static', filename='imgs/heartRate.png') }}" alt="Heart Rate Data">
+            </div>
+                <div class = "box3"><img src="{{ url_for('static', filename='imgs/bloodPressure.png') }}" alt="Blood Pressure Data"></div>
+                <div class = "box4"><img src="{{ url_for('static', filename='imgs/bloodSugar.png') }}" alt="Blood Sugar Data"></div>
         
             </div>
 

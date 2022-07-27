@@ -1,3 +1,4 @@
+import math
 from flask import flash
 from flask_app.config.mysqlconnection import connectToMySQL
 
@@ -17,6 +18,7 @@ class Medication:
         self.user_id = data['user_id']
         self.days_of_week_list = []
         self.times_of_day_list = []
+        self.days_till_refill = math.floor((len(self.days_of_week_list) * len(self.times_of_day_list)))
 
     @staticmethod
     def validateAddMeds(data):
@@ -106,6 +108,7 @@ class Medication:
                 totalTimeBit = totalTimeBit - 1
                 i.times_of_day_list.append("Morning")
             i.times_of_day_list = i.times_of_day_list[::-1]
+            i.days_till_refill = math.floor(i.pills_count * 7 / (len(i.days_of_week_list) * len(i.times_of_day_list)))
         return meds
 
     @staticmethod
