@@ -59,6 +59,7 @@ def loginForm():
 @app.route('/logoutForm', methods = ['POST'])
 def logoutForm():
     print("logged out ")
+    session.clear()
     return redirect('/')
 
 
@@ -91,7 +92,11 @@ def addAppointment():
 
 @app.route('/deleteAppointment', methods = ['POST'])
 def deleteAppointment():
-    print(request.form)
+    data = {
+        'id': request.form['id']
+    }
+
+    x = Appointment.deleteAppointment(data)
     return redirect('/appointmentsPage')
 
 # ******************* APPOINTMENT END *******************
@@ -124,9 +129,14 @@ def takeMedication():
     Medication.takeMedication(request.form)
     return redirect('medicationsPage')
 
+@app.route('/editMedication', methods = ['POST'])
+def getOneMedication():
+    med = Medication.getOneMedication(request.form)
 
 
-# ******************* MEASUREMENTS END *******************
+
+
+# ******************* MEDICATIONS END *******************
 
 @app.route('/addHeartRate', methods = ['POST'])
 def addHeartRate():
@@ -135,8 +145,8 @@ def addHeartRate():
         'patient_id': session['id']
     }
     newID = HeartRate.insertHeartRate(data)
-
     x = HeartRate.plotHeartRate(data)
+
 
     return redirect('/vitalsPage')
 
@@ -157,7 +167,6 @@ def addBloodPressure():
 
 @app.route('/addBloodSugar', methods = ["POST"])
 def addBloodSugar():
-    print(request.form)
     if request.form['measurementUnits'] == "mM":
         blood_sugar_mmol_l = float(request.form['blood_sugar'])
         blood_sugar_mg_dl =  (blood_sugar_mmol_l*18)
@@ -174,3 +183,12 @@ def addBloodSugar():
     newID = BloodSugar.insertBloodSugar(data)
     x = BloodSugar.plotbloodSugar(data)
     return redirect('/vitalsPage')
+
+
+    # ************************ Vitals END ********************************** #
+
+
+@app.route('/editAccount', methods = ['POST'])
+def editAccountInfo():
+
+    return redirect('/accountPage')

@@ -15,6 +15,21 @@
 </head>
 
 <body>
+    <script>
+        function replace(element){
+            console.log("Made it")
+            var arr = ["home", "HRchart", "BPchart", "BSchart"];
+            document.getElementById(element).style.display = "flex";
+            for (var i = 0 ; i < arr.length; i++){
+                if(arr[i]!= element){
+                    document.getElementById(arr[i]).style.display = "none";
+                    console.log("Im in")
+                }
+            }
+        }
+    
+    </script>
+
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
@@ -47,7 +62,7 @@
                 </li>
                 <li>
                     <img src="../../../static/imgs/user.png" alt="heart">
-                    <a href="{{url_for('vitalsPage')}}">{{first_name}}</a>
+                    <a href="{{url_for('accountPage')}}">{{first_name}}</a>
                 </li>
                 <li class = "nav-item">
                     <form action='/logoutForm' method='post'>
@@ -61,23 +76,81 @@
         <div id="dashboard">
             <h3>Dashboard</h3>
             <div id="content">
-                <div class="box1">Next Appointment <br>
-                    <a href="#">View Appointments</a></div>
-                <div class="box2">Days till Refill</div>
-                <div class="box3">Today's Medication</div>
-                <div class="box4">Heart Rate:</div>
-                <div class="box5">Vital Charts
+                <div class="box1" >
+                    <h6>Next Appointment</h6>
+                    {% if nextAppt == "No appointment" %}
+                    <p>{{nextAppt}}</p>
+                    {% else %}
+                    <p>{{nextAppt.title}}</p>
+                    <p>{{nextAppt.start_time}}</p>
+                    {% endif %}
                 </div>
+                <div class="box2"><h6>Days till Refill</h6>
+                    <p>{{upcomingMed}}: {{refill}} Days</p>
+                </div>
+                <div class="box3">
+                    <div>
+                        <h6>Today's Medication</h6>
+                        {% for medicine in meds%}
+                            
+                            {% if currDay in medicine.days_of_week_list: %}
+                                <p>{{medicine.name}}: {{medicine.dosage_mg}}mg/{{medicine.dosage_pills}}pills</p>
+                                <form action="/takeMedication" method = 'post'>
+                                    <input type="hidden" value = {{medicine.id}} name = "id"> 
+                                    <input type="submit" value = Taken id = "medButton">
+                                </form>
+                                    
+                                <p>----------</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    
 
-                <div class="box6">Glucose: </div>
+                </div>
+                <div class="box4"> <p>Heart Rate: </p>
+                    
+                    {% if lastHR == "No Data" %}
+                    <p>{{lastHR}}</p>
+                    {% else %}
+                    <p>{{lastHR.heart_rate}} BPM</p>
+                    {% endif %}
+                </div>
+                <div class="box5">
+                    <div id = "home" style = "display:block">
+                        <h6>Vital Charts</h6>  
+                    </div>
+                    <div id = "HRchart" style = "display:none"><img src="{{ url_for('static', filename='imgs/heartRate.png') }}" alt="Heart Rate Data"></div>
+                    <div id = "BPchart" style = "display:none"><img src="{{ url_for('static', filename='imgs/bloodPressure.png') }}" alt="Blood Pressure Data"></div>
+                    <div id = "BSchart" style = "display:none"><img src= "{{ url_for('static', filename='imgs/bloodSugar.png') }}" alt="Blood Sugar Data"></div>
+                    <button onclick="replace('HRchart')">Heart Rate</button>
+                    <button onclick = "replace('BPchart')">Blood Pressure</button>
+                    <button onclick = "replace('BSchart')">Blood Sugar </button>
+
+
+                </div>
+                <div class="box6">
+                    <p>Glucose:</p>
+                    {% if lastBS == "No Data" %}
+                    <p>{{lastBS}}</p>
+                    {% else %}
+                    <p>{{lastBS.blood_sugar_mmol_l}} mM</p>
+                    {% endif %}
+                </div>
                 <div class="box7">Messages: </div>
-                <div class="box8">Blood Pressure</div>
+                <div class="box8"> <p>Blood Pressure:</p>
+                    {% if lastBP == "No Data" %}
+                    <p>{{lastBP}}</p>
+                    {% else %}
+                    <p>{{lastBP.systolic_data}}/{{lastBP.diastolic_data}} mmHg</p>
+                    {% endif %}
+                </div>
             </div>
 
         </div>
     </div>
 
- 
+
 </body>
 
 </html>
+

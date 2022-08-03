@@ -38,5 +38,24 @@ class Appointment:
             appointments.append(cls(appointment))
         return appointments
     
+    @staticmethod 
+    def deleteAppointment(data):
+        query = "DELETE from appointment WHERE id = %(id)s;"
+        result = connectToMySQL("health_check").query_db(query, data)
+        return result
 
+    @classmethod
+    def getOneAppointment(cls, data):
+        query = "SELECT * from appointment WHERE users_id = %(users_id)s ORDER BY start_time limit 1"
+        result = connectToMySQL("health_check").query_db(query, data)
+        appointments = []
+        for appointment in result:
+            appointments.append(cls(appointment))
+
+        if len(appointments) == 0 :
+            appointments = "No appointment"
+            print("No appointment")
+        else:
+            appointments = appointments[0]
+        return appointments
 

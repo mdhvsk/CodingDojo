@@ -1,3 +1,4 @@
+from fileinput import close
 import math
 from flask import flash
 from flask_app.config.mysqlconnection import connectToMySQL
@@ -5,6 +6,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 
 class Medication:
 
+    
     def __init__(self, data):
         self.id = data['id']
         self.name = data['name']
@@ -19,7 +21,6 @@ class Medication:
         self.days_of_week_list = []
         self.times_of_day_list = []
         self.days_till_refill = math.floor((len(self.days_of_week_list) * len(self.times_of_day_list)))
-
     @staticmethod
     def validateAddMeds(data):
         is_valid = True
@@ -58,25 +59,24 @@ class Medication:
         return newID
 
     @classmethod
-    def getAllMeds(cls):
-        query = "SELECT * from medications"
-        result = connectToMySQL("health_check").query_db(query)
+    def getAllMeds(cls, data):
+        query = "SELECT * from medications WHERE user_id = %(user_id)s"
+        result = connectToMySQL("health_check").query_db(query, data)
         meds = []
-
+        closestRefill = 365
+        closestRefillMed = ""
         for medicine in result:
             meds.append(cls(medicine))
         
         for i in meds:
             print(i)
             totalDayBit = int(i.days_of_week)
-            print(totalDayBit)
             if totalDayBit >= 64:
                 totalDayBit = totalDayBit - 64
                 i.days_of_week_list.append("Saturday")
             if totalDayBit >= 32:
                 totalDayBit = totalDayBit - 32
                 i.days_of_week_list.append("Friday")
-                print('yes')
             if totalDayBit >= 16:
                 totalDayBit = totalDayBit - 16
                 i.days_of_week_list.append("Thursday")
@@ -109,11 +109,35 @@ class Medication:
                 i.times_of_day_list.append("Morning")
             i.times_of_day_list = i.times_of_day_list[::-1]
             i.days_till_refill = math.floor(i.pills_count * 7 / (len(i.days_of_week_list) * len(i.times_of_day_list)))
-        return meds
+            if i.days_till_refill < closestRefill:
+                closestRefill = i.days_till_refill
+                closestRefillMed = i.name
+        print(closestRefill)
+        print(closestRefillMed)
+
+        if len(meds) == 0:
+            meds = "None"
+            closestRefill = "None"
+            closestRefillMed = "None"
+
+        return meds, closestRefill, closestRefillMed
 
     @staticmethod
     def takeMedication(data):
         query = "UPDATE medications SET pill_count = pill_count-1 WHERE id = %(id)s"
         connectToMySQL("health_check").query_db(query, data)
         return 
+
+    @classmethod 
+    def getOneMedication(cls, data):
+        query = "SELECT * from medications WHERE user_id = %(id)s"
+        result = connectToMySQL("health_check").query_db(query, data)
+        med = []
+
+        for i in result:
+            med.append(cls(i))
+        
+        return med[0]
+
+        
 

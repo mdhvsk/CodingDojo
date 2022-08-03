@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <img src="../../../static/imgs/user.png" alt="heart">
-                    <a href="{{url_for('vitalsPage')}}">Account</a>
+                    <a href="{{url_for('accountPage')}}">{{first_name}}</a>
                 </li>
                 <li class = "nav-item">
                     <form action='/logoutForm' method='post'>
@@ -69,6 +69,7 @@
                             <th>Comment</th>
                             <th>Total pills</th>
                             <th>Current pill count</th>
+                            <th>Edit</th>
                         </thead>
                         {% for medicine in meds%}
                             <tr>
@@ -80,8 +81,11 @@
                                 <td>{{medicine.comment}}</td>
                                 <td>{{medicine.total_pills}}</td>
                                 <td>{{medicine.pills_count}}</td>
-                                <input type="hidden" value = {{medicine.id}} >
-                                <td><input type="submit" value = Edit ></td>
+                                <form action="/editMedication" method = 'post'>
+                                    <input type="hidden" value = {{medicine.id}} name = "id">
+                                    <td><input type="submit" value = Edit ></td>
+                                </form>
+                            
                             </tr>
                         {% endfor %}
                     </table>
@@ -89,7 +93,8 @@
                 </div>
                 <div class = "box2"><h4>Today's Medication</h4>
                     {% for medicine in meds%}
-                        {% if 'Tuesday' in medicine.days_of_week_list: %}
+                        
+                        {% if currDay in medicine.days_of_week_list: %}
                             <p>{{medicine.name}}: {{medicine.dosage_mg}}mg/{{medicine.dosage_pills}}pills</p>
                             <form action="/takeMedication" method = 'post'>
                                 <input type="hidden" value = {{medicine.id}} name = "id"> 
@@ -101,11 +106,10 @@
                     {% endfor %}
 
                 </div>
-                <div class = "box3"> <a href="{{url_for('medicationsAdd')}}">Add medication</a>
-                      </div>
+                <div class = "box3"> <a href="{{url_for('medicationsAdd')}}">Add medication</a></div>
                 <div class = "box4"> <h4>Estimated Refills Needed</h4>
                     {% for medicine in meds%}
-                        <p>{{medicine.name}} {{medicine.days_till_refill}}</p>
+                        <p>{{medicine.name}}: {{medicine.days_till_refill}} Days</p>
                     {% endfor %}
             </div>
 

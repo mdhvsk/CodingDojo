@@ -127,7 +127,22 @@ h3 {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    background-image: linear-gradient(to right, #5800FF, #72FFFF);
 }
+
+.box1 a, .box1 a:visited {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px
+}
+
+.box1 a:hover {
+    font-weight: bold;
+}
+
+
 
 .box2 {
     grid-column-start: 1;

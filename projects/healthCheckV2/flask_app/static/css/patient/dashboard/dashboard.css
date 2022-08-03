@@ -1,3 +1,7 @@
+/* @media only screen and (min-width: 1024px) {}
+    @media only screen and (max-width: 480px) {} */
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -11,6 +15,7 @@
 .wrapper {
     display: flex;
     align-items: stretch;
+    background-color: #F5F6FA;
     
 }
 
@@ -59,6 +64,7 @@
     background-color: #5800FF;
     border-radius: 10px;
     margin-right: 25px;
+    color: white
 
 
 }
@@ -95,6 +101,7 @@ h3 {
 }
 
 #dashboard {
+    width: 100%;
     padding-top: 50px;
     display: block;
     background-color: #F5F6FA;
@@ -115,9 +122,7 @@ h3 {
 
 #content>div {
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
     background-color: #FFFFFF;
 }
 
@@ -125,18 +130,54 @@ h3 {
     
     grid-column-start: 1;
     grid-row-start: 1;
+    display:block;
+    text-align: center;
+    align-items: center;
+}
+
+
+.box1 p, .box1 h6, .box3 h6, .box5 h6 {
+    padding: 10px;
 }
 
 .box2 {
     grid-column-start: 2;
     grid-row-start: 1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center
     
 }
+
+.box2 * {
+    padding-top: 40px;
+}
+
+
 
 .box3 {
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
+    display:flex;
+    font-size: 0.75em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#medButton {
+    color: white;
+    background-color:#00D7FF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#medButton:hover {
+    font-weight: 600;
 }
 
 .box4 {
@@ -145,8 +186,17 @@ h3 {
     background-image: linear-gradient(#5800FF,#0096FF );
     color: white;
     font-weight:800;
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
 
 
+
+.box4 p {
+
+    padding-top: 40px
 }
 
 .box5 {
@@ -154,23 +204,65 @@ h3 {
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 4;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
+.box5 button {
+    color: white;
+    background-color:#0096FF;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5%;
+}
+
+.box5 button:hover {
+    font-weight: 600;
+}
+
+.box5 img {
+    max-width: 80%;
+    justify-content: center;
 }
 
 .box6 { 
     background-image: linear-gradient(#0096FF, #00D7FF);
     color: white;
     font-weight:800;
-    
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 
+    
+}
+
+.box6 p {
+
+    padding-top: 40px
 }
 
 .box7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .box8 {
     background-image: linear-gradient( #00D7FF, #72FFFF);
     color: white;
     font-weight:800;
+    text-align: center;
+    display: block;
+    align-items: center;
+    justify-content: center;
 
+}
+
+
+.box8 p {
+
+    padding-top: 40px
 }

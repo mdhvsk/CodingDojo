@@ -43,16 +43,18 @@ class Patient:
             is_valid = False
         return is_valid
 
-    @classmethod
-    def registerUser(cls, data):
+    @staticmethod
+    def registerUser(data):
         query = "INSERT INTO patients(first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
         newID = connectToMySQL("health_check").query_db(query, data)
         return newID
 
     @staticmethod
     def getUserByEmail(data):
-        query = "SELECT * from patients WHERE email = %(email)s"
+        # query = "SELECT * from patients WHERE email = %(email)s"
+        query = "SELECT * from patients LEFT JOIN addresses on addresses.id = user_address_id WHERE email = %(email)s"
         result = connectToMySQL("health_check").query_db(query, data)
         if len(result) == 0:
             return False
         return result[0]
+

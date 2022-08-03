@@ -43,7 +43,7 @@
                 </li>
                 <li>
                     <img src="../../../static/imgs/user.png" alt="heart">
-                    <a href="{{url_for('vitalsPage')}}">Account</a>
+                    <a href="{{url_for('accountPage')}}">{{first_name}}</a>
                 </li>
                 <li class = "nav-item">
                     <form action='/logoutForm' method='post'>
@@ -75,8 +75,8 @@
                             <td>{{appointment.end_time}}</td>
                             <td>{{appointment.description}}</td>
                             <form action="deleteAppointment" method = 'post'>
-                                <input type="hidden" value = "{{appointment.id}}">
-                                <td><button>Done</button></td>
+                                <input type="hidden" value = "{{appointment.id}}" name = "id">
+                                <td><input type="submit" value = Done></td>
                             </form>
                         
 
