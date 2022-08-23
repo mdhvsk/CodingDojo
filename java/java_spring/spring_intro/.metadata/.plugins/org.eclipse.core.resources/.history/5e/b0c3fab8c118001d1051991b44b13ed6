@@ -1,0 +1,18 @@
+package com.madhavaasok.counter.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+	
+	@RequestMapping ("/your_server")
+	public String index(HttpSession session) {
+//		int counter = (int) session.getAttribute("counter");
+//		System.out.println("You visited the homepage: "+ counter + " times");
+		return "index.jsp";
+	}
+	
+}

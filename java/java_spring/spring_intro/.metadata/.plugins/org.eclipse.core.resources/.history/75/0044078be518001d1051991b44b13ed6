@@ -1,0 +1,13 @@
+package com.madhavasok.ninjagoldgame.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+	@RequestMapping("/Gold")
+	public String index() {
+		return "index.jsp";
+	}
+}

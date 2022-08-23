@@ -1,0 +1,5 @@
+package com.madhavasok.queryparametercontroller;
+
+public class HomeController {
+
+}

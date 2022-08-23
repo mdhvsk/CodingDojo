@@ -1,0 +1,13 @@
+package com.madhavasok.daikichiroutes;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DaikichroutesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DaikichroutesApplication.class, args);
+	}
+
+}

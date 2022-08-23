@@ -1,0 +1,31 @@
+package com.madhavasok.ninjagoldgame.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class HomeController {
+
+	@RequestMapping("/gold")
+	public String index() {
+		
+		return "index.jsp";
+	}
+	
+	@RequestMapping(value = "/findGold", method = RequestMethod.POST)
+	public String findGold(
+			@RequestParam(value = "selection") String selection
+			) {
+		
+		System.out.println(selection);
+		System.out.println("farm");
+
+		if (selection === "farm") {
+			System.out.println("MOOOOOO");
+		}
+		
+		return "redirect:/gold";
+	}
+}

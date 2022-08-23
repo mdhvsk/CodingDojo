@@ -1,0 +1,20 @@
+package com.madhavasok.counter.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MainController {
+	
+	@RequestMapping("/your_server")
+	public String index(HttpSession session) {
+        session.setAttribute("count", 0);
+		int count = (int) session.getAttribute("count");
+
+		System.out.println("You visited the homepage: "+ count + " times");
+		return "index.jsp";
+	}
+	
+}

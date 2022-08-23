@@ -1,0 +1,5 @@
+package com.madhavasok.hoppersreciept.controllers;
+
+public class HomeController {
+
+}

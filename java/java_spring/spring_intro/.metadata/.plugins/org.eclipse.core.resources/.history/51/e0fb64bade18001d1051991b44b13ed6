@@ -1,0 +1,11 @@
+package com.madhavasok.ninjagoldgame.controllers;
+
+
+@Controller
+public class HomeController {
+
+	@RequestMapping("/Gold")
+	public String index() {
+		return "index.jsp";
+	}
+}

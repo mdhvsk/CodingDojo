@@ -1,0 +1,49 @@
+package com.madhavasok.ninjagoldgame.controllers;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import java.util.Random;
+
+@Controller
+public class HomeController {
+
+	@RequestMapping("/gold")
+	public String index() {
+		
+		return "index.jsp";
+	}
+	
+	@RequestMapping(value = "/findGold", method = RequestMethod.POST)
+	public String findGold(
+			@RequestParam(value = "selection") String selection,
+			HttpSession session
+			) {
+		Integer randomGold;
+		Random random = new Random();
+		Integer result;
+			
+	
+		if (selection.equals("farm")) {
+			System.out.println("MOOOOOO");
+			randomGold = random.nextInt(11) + 10;
+			System.out.println(randomGold);
+			
+			
+		}
+		else if (selection.equals("cave")){
+			System.out.println("AHH Covid");
+		}
+		else if (selection.equals("house")) {
+			System.out.println("Home sweet home");
+		}
+		else {
+			System.out.println("Adventure time");
+		}
+		
+		return "redirect:/gold";
+	}
+}

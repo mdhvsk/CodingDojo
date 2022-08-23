@@ -1,0 +1,5 @@
+package com.madhavaasok.counter.controllers;
+
+public class MainController {
+
+}

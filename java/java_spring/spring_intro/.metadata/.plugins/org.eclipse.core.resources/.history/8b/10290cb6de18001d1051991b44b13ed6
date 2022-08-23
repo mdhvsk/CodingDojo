@@ -1,0 +1,5 @@
+package com.madhavasok.ninjagoldgame.controllers;
+
+public class HomeController {
+
+}
